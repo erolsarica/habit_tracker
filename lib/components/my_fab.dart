@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 
 class MyFloatingActionButton extends StatelessWidget {
-  const MyFloatingActionButton({Key? key}) : super(key: key);
+  final Function()? onPressed;
+
+  const MyFloatingActionButton({
+    super.key,
+    required this.onPressed,
+});
+
+
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(onPressed: () {});
+    return FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+    );
   }
 }

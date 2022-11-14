@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../components/habit_tile.dart';
 import 'package:habit_tracker/components/my_fab.dart';
 
+import '../components/new_habit_box.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -28,15 +30,20 @@ class _HomePageState extends State<HomePage> {
 
   // create a new habit
   void createNewHabit() {
-
-
+    // show alert dialog for user to enter the new habit details
+    showDialog(
+        context: context,
+        builder: (context) {
+          return EnterNewHabitBox();
+        }
+        );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      floatingActionButton: MyFloatingActionButton(),
+      floatingActionButton: MyFloatingActionButton(onPressed: createNewHabit,),
       body: ListView.builder(
         itemCount: todaysHabitList.length,
         itemBuilder: (context, index) {
@@ -54,4 +61,4 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-//6.10
+//8.09
