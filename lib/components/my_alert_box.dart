@@ -4,12 +4,14 @@ class MyAlertBox extends StatelessWidget {
   final controller;
   final VoidCallback onSave;
   final VoidCallback onCancel;
+  final String hintText;
 
   const MyAlertBox({
     super.key,
     required this.controller,
     required this.onSave,
     required this.onCancel,
+    required this.hintText,
   });
 
   @override
@@ -19,11 +21,13 @@ class MyAlertBox extends StatelessWidget {
       content: TextField(
         controller: controller,
         style: const TextStyle(color: Colors.white),
-        decoration: const InputDecoration(
+        decoration: InputDecoration(
+          hintText: hintText,
+          hintStyle: TextStyle(color: Color.fromRGBO(255, 255, 255, 1)),
           enabledBorder:
-              OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+              const OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
           focusedBorder:
-              OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+              const OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
         ),
       ),
         actions: [

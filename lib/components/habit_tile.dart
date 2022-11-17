@@ -3,7 +3,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 
 class HabitTile extends StatelessWidget {
   final String habitName;
-  final bool habitComplated;
+  final bool habitCompleted;
   final Function(bool?)? onChanged;
   final Function(BuildContext)? settingsTapped;
   final Function(BuildContext)? deleteTapped;
@@ -11,7 +11,7 @@ class HabitTile extends StatelessWidget {
   const HabitTile({
     super.key,
     required this.habitName,
-    required this.habitComplated,
+    required this.habitCompleted,
     required this.onChanged,
     required this.settingsTapped,
     required this.deleteTapped,
@@ -53,7 +53,7 @@ class HabitTile extends StatelessWidget {
             children: [
               // checkbox
               Checkbox(
-                value: habitComplated,
+                value: habitCompleted,
                 onChanged: onChanged,
               ),
 

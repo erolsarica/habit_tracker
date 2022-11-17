@@ -13,7 +13,7 @@ class MyFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-        onPressed: () {},
+        onPressed: onPressed,
         child: Icon(Icons.add),
     );
   }
