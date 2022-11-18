@@ -76,7 +76,6 @@ class _HomePageState extends State<HomePage> {
     _newHabitNameController.clear();
     // pop dialog box
     Navigator.of(context).pop();
-
     db.updateDatabase();
 
   }
@@ -96,7 +95,7 @@ class _HomePageState extends State<HomePage> {
       builder: (context) {
         return MyAlertBox(
             controller: _newHabitNameController,
-            hintText: db.todaysHabitList[index],
+            hintText: db.todaysHabitList[index][0],
             onSave: () => saveExistingHabit(index),
             onCancel: cancelDialogBox,
         );
